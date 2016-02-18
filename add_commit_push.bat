@@ -1,4 +1,4 @@
 git add *
-git commit -m "Fixed indentation bug"
+git commit -m "Bus changes made"
 git push -u origin master
 git status

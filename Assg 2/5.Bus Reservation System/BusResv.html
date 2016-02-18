@@ -56,7 +56,7 @@
                     <input type="radio" name="gender" value="female"> Female<br><br>
                 &nbsp&nbsp&nbspAddress &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<textarea name="address" rows="3" cols="22" placeholder="Please enter the address here"></textarea><br><br>
                 &nbsp&nbsp&nbsp
-                <button type="button" id="button1"  onClick="clicksa()">Submit</button>
+                    <button type="button" id="button1"  onClick="clicksa()">Submit</button>
                 </form>
             </div>
             
@@ -83,83 +83,13 @@
                
         });
 
-        $("#btn1").click(function(){
-             $(this).css('color','red'); 
-             $(this).text('booked');
-             $(this).attr("disabled", "disabled");
-              });
-              
-              $("#btn2").click(function(){
-             $(this).css('color','red'); 
-             $(this).text('booked');
-             $(this).attr("disabled", "disabled");
-              });
-              
-              $("#btn3").click(function(){
-             $(this).css('color','red'); 
-             $(this).text('booked');
-             $(this).attr("disabled", "disabled");
-              });
-              
-              $("#btn4").click(function(){
-             $(this).css('color','red'); 
-             $(this).text('booked');
-             $(this).attr("disabled", "disabled");
-              });
-              
-              $("#btn5").click(function(){
-             $(this).css('color','red'); 
-             $(this).text('booked');
-             $(this).attr("disabled", "disabled");
-              });
-              
-              $("#btn6").click(function(){
-             $(this).css('color','red'); 
-             $(this).text('booked');
-             $(this).attr("disabled", "disabled");
-              });
-              $("#btn7").click(function(){
-             $(this).css('color','red'); 
-             $(this).text('booked');
-             $(this).attr("disabled", "disabled");
-              });
-              
-              $("#btn8").click(function(){
-             $(this).css('color','red'); 
-             $(this).text('booked');
-             $(this).attr("disabled", "disabled");
-              });
-              $("#btn9").click(function(){
-             $(this).css('color','red'); 
-             $(this).text('booked');
-             $(this).attr("disabled", "disabled");
-              });
-              $("#btn10").click(function(){
-             $(this).css('color','red'); 
-             $(this).text('booked');
-             $(this).attr("disabled", "disabled");
-              });
-                $("#btn11").click(function(){
-             $(this).css('color','red'); 
-             $(this).text('booked');
-             $(this).attr("disabled", "disabled");
-              });
-               $("#btn12").click(function(){
-             $(this).css('color','red'); 
-             $(this).text('booked');
-             $(this).attr("disabled", "disabled");
-              });
-               $("#btn13").click(function(){
-             $(this).css('color','red'); 
-             $(this).text('booked');
-             $(this).attr("disabled", "disabled");
-              });
-               $("#btn14").click(function(){
-             $(this).css('color','red'); 
-             $(this).text('booked');
-             $(this).attr("disabled", "disabled");
-              });
-        
+        $(".button").click(function(){
+            $(this).css('color','red'); 
+            var nameString =$("#tb1").val();
+            $(this).text(nameString);
+            $(this).attr("disabled", "disabled");  
+         });
+
         var Seat = 14;
         var clicks = 0;
         var ticket= 500;
@@ -177,18 +107,22 @@
              if(clicks == 14)
             {
                 alert("All seat are full !!!! ")
-            }
-            
+            }           
         };
         
         function clicksa()     //Display the First name, Last name and Tel no at the centre
-        { 
-            /* var a=$("#tb1").text();
-            $("#name").text(a);
-            */
-            document.getElementById("name").innerHTML=document.getElementById('tb1').value;
-            document.getElementById("age").innerHTML=document.getElementById('tb2').value;
-            document.getElementById("contact").innerHTML=document.getElementById('tb3').value;
+        {   
+            $("#clicks").text("0");
+            $("#rupees").text("0");
+            
+            var nameString =$("#tb1").val();
+            $("#name").text(nameString);
+            
+            var ageString = $("#tb2").val();
+            $("#age").text(ageString);
+            
+            var contactNumString =$("#tb3").val();
+            $("#contact").text(contactNumString);          
         };
     </script>
     </div>
