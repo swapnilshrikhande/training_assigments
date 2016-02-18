@@ -8,6 +8,7 @@ public class Employee
 	String marital_status;
 	int salary;
 	
+	/*Constructor*/
 	public Employee(String eName, int eId, int eAge, String eMarried, int eSalary) 
 	{
 		this.name=eName;
