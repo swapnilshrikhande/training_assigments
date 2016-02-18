@@ -1,0 +1,52 @@
+<html> 
+ <head>
+	<title>Sorting Object Array</title>
+ </head>	
+ <body>
+   SORTING PRIMITIVE ARRAY</BR>
+	<script type="text/javascript">
+	
+	var car=[]
+	car[0]={model:"HondaCity", price:1300000, fuel:"Diesel"}
+	car[1]={model:"I20", price:900000, fuel:"Diesel"}
+	car[2]={model:"Santro", price:500000, fuel:"Petrol"}
+	car[3]={model:"WagonR", price:300000, fuel:"Petrol"}
+	
+	var input = prompt("Enter Sorting Criteria : 1)model 2)price 3)fuel-type ");
+
+	if(input==1)
+	{
+		car.sort(function(a, b)
+		{
+			if (a.model < b.model) 
+				return -1
+			if (a.model > b.model)
+				return 1
+			return 0 
+		})
+		console.log(car);
+	}
+		if(input==2)
+	{
+		car.sort(function(a, b)
+		{
+			return a.price-b.price
+		})
+		console.log(car);
+	}
+	
+	if(input==3)
+	{
+		car.sort(function(a, b)
+		{
+			if (a.fuel < b.fuel) 
+				return -1
+			if (a.fuel > b.fuel)
+				return 1
+			return 0 
+		})
+		console.log(car);
+	}
+	</script>
+</body>
+</html>
