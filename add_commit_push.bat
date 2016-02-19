@@ -1,4 +1,4 @@
 git add *
-git commit -m "Bus changes made"
+git commit -m "Updated Bus Asgnmt"
 git push -u origin master
 git status
