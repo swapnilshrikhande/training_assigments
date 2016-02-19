@@ -5,18 +5,21 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script type="text/javascript">
 	
+    $(document).ready(function()
+    {
+        $(".button").click(function(){
+        
+            if( $(this).attr("id")=="root" ){
+                doroot();
+            }            
+        });
+    });
+    
 	function doroot()
 	{
-		var a =document.form1.input1.value;
-		var result = Math.sqrt(a);
-		$(document).ready(function()
-		{
-			$("#root").click(function()
-			{
-				$("#Ans").text(result);
-			});
-		});
-		console.log(result)
+        var a = document.form1.input1.value;
+        var result = Math.sqrt(a);
+        $("#Ans").text(result);
 	}
 
 	function dosquare(){
@@ -65,7 +68,7 @@
 	<div style="width:200px; margin:auto;">
 		<form name=form1 action="" id="cal">    	
 			<input type="text"   value=""            id="input1" placeholder = "enter the number " style="width:98%; height:35px;" />      
-			<input type="button" value="sqrt"        id="root"   onClick='doroot()'                style="width:50px; height:50px; float:left;"/>
+			<input type="button" value="sqrt"        id="root"                   style="width:50px; height:50px; float:left;"/>
 			<input type="button" value="^2"          id="square" onClick='dosquare()'              style="width:50px; height:50px; float:left;"/>
 			<input type="button" value="^3"          id="cube"   onClick='docube()'                style="width:50px; height:50px; float:left;"/>
 			<input type="button" value="*10"         id="ten"    onClick='doten()'                 style="width:50px; height:50px; float:left;"/>

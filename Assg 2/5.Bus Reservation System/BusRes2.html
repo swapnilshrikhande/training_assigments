@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bus Reservation System</title>
+        <link rel="stylesheet" href="BusResv_Css.css">
+    </head>
+<!-- --------------------------------------------------------------------------- -->  
+    <body bgcolor ="#F5D0A9">
+        <div id="containerPage">
+            <div id="heading">
+                <h1>BUS SEATS RESERVATION SYSTEM</h1>
+            </div>	
+<!-- --------------------------------------------------------------------------- -->	
+            <div id="SeatAllignment" >	
+                <table border="1" width="300" align = "left"></br></br>
+                    <center><h3>Total Seats:<a id="seats1"></a> &nbsp&nbsp&nbsp&nbsp&nbsp Total Available Seats:<a id="seats2"></h3></center></a><br></br></br>
+                    <tr>
+                        <th><button type="button" class="button" onClick="onClick()" id="btn1">Seat no.1</button></th>
+                        <th><button type="button" class="button" onClick="onClick()" id="btn2">Seat no.2</button></th>
+                      </tr>
+                      <tr>
+                        <th><button type="button" class="button" onClick="onClick()" id="btn3">Seat no.3</button></th>
+                        <th><button type="button" class="button" onClick="onClick()" id="btn4">Seat no.4</button></th>
+                      </tr>
+                      <tr>
+                        <th><button type="button" class="button" onClick="onClick()" id="btn5">Seat no.5</button></th>
+                        <th><button type="button" class="button" onClick="onClick()" id="btn6">Seat no.6</button></th>
+                      </tr>
+                      <tr>
+                        <th><button type="button" class="button" onClick="onClick()" id="btn7">Seat no.7</button></th>
+                        <th><button type="button" class="button" onClick="onClick()" id="btn8">Seat no.8</button></th>
+                      </tr>
+                      <tr>
+                        <th><button type="button" class="button" onClick="onClick()" id="btn9">Seat no.9</button></th>
+                        <th><button type="button" class="button" onClick="onClick()" id="btn10">Seat no.10</button></th>
+                      </tr>
+                        <tr>
+                        <th><button type="button" class="button" onClick="onClick()" id="btn11">Seat no.11</button></th>
+                        <th><button type="button" class="button" onClick="onClick()" id="btn12">Seat no.12</button></th>
+                      </tr>  <tr>
+                        <th><button type="button" class="button" onClick="onClick()" id="btn13">Seat no.13</button></th>
+                        <th><button type="button" class="button" onClick="onClick()" id="btn14">Seat no.14</button></th>
+                      </tr>	
+                  </table>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+             </div>
+ <!-- --------------------------------------------------------------------------- -->   
+ 
+     <div id="seatAssignment">				
+            <div>
+                <H3>&nbsp&nbsp&nbspSEAT ASSIGNMENT</H3
+                <form border = "10px">
+                &nbsp&nbsp&nbspFirst name &nbsp&nbsp&nbsp&nbsp&nbsp <input type="text" name="firstname" placeholder="Please enter the First Name" id="tb1" > <br><br> 
+                &nbsp&nbsp&nbspLast name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="lastname" placeholder="Please enter the Last Name" id="tb2"> <br><br>
+                &nbsp&nbsp&nbspTelephone No <input type="text" name="telephone" placeholder="Please enter the Tel no" id="tb3"> <br><br>
+                &nbsp&nbsp&nbspGender &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="radio" name="gender" value="male" > Male
+                    <input type="radio" name="gender" value="female"> Female<br><br>
+                &nbsp&nbsp&nbspAddress &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<textarea name="address" rows="3" cols="22" placeholder="Please enter the address here"></textarea><br><br>
+                &nbsp&nbsp&nbsp
+                    <button type="button" id="button1"  onClick="clicksa()">Submit</button>
+                </form>
+            </div>
+            
+            
+     </div>
+<!-- --------------------------------------------------------------------------- -->  
+        
+    <div id="info">  
+        <h3>
+        &nbsp&nbsp&nbsp&nbsp&nbspFirst Name: <a id="name"></a><br>
+        &nbsp&nbsp&nbsp&nbsp&nbspLast Name: <a id="age"></a><br>
+        &nbsp&nbsp&nbsp&nbsp&nbspContact No.: <a id="contact"></a><br>
+        &nbsp&nbsp&nbsp&nbsp&nbspNo.of Seats: &nbsp&nbsp&nbsp  <a id="clicks">0</a><br>
+        &nbsp&nbsp&nbsp&nbsp&nbspTotal Amount: &nbsp <a id="rupees">0</a><br></br>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp  <button type="button" id="button2"  onClick="window.print()">Print</button>
+        </br></br>
+        </h3>
+    </div>
+<!-- --------------------------------------------------------------------------- -->  
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+     <script type="text/javascript">
+        $(document).ready(function(){
+               
+        });
+
+        $(".button").click(function(){
+            $(this).css('color','red'); 
+            var nameString =$("#tb1").val();
+            $(this).text(nameString);
+            $(this).attr("disabled", "disabled");  
+         });
+
+        var Seat = 14;
+        var clicks = 0;
+        var ticket= 500;
+        var Total_amount;
+        $("#seats1").text(Seat) ;
+        $("#seats2").text(clicks) ;
+        
+        function onClick() 
+        {  
+            clicks += 1;
+            $("#clicks").text(clicks) ;
+             Total_amount=ticket*clicks;
+            $("#rupees").text(Total_amount) ;
+            $("#seats2").text(Seat-clicks) ;
+             if(clicks == 14)
+            {
+                alert("All seat are full !!!! ")
+            }           
+        };
+        
+        function clicksa()     //Display the First name, Last name and Tel no at the centre
+        {   
+            $("#clicks").text("0");
+            $("#rupees").text("0");
+            
+            var nameString =$("#tb1").val();
+            $("#name").text(nameString);
+            
+            var ageString = $("#tb2").val();
+            $("#age").text(ageString);
+            
+            var contactNumString =$("#tb3").val();
+            $("#contact").text(contactNumString);          
+        };
+    </script>
+    </div>
+    </body>
+</html>
