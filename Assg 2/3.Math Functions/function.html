@@ -2,80 +2,71 @@
 <html>
 <head>
 	<title>Mathematical Functions</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script type="text/javascript">
-	
-    $(document).ready(function()
-    {
-        $(".button").click(function(){
-        
-            if( $(this).attr("id")=="root" ){
-                doroot();
-            }            
-        });
-    });
-    
-	function doroot()
-	{
-        var a = document.form1.input1.value;
-        var result = Math.sqrt(a);
-        $("#Ans").text(result);
-	}
-
-	function dosquare(){
-		var a =document.form1.input1.value;
-		var result = Math.pow(a,2);
-		$(document).ready(function()
-		{
-			$("#square").click(function()
-			{
-				$("#Ans").text(result);
-			});
-		});
-		console.log(result)
-	}
-
-	function docube(){
-		var a =document.form1.input1.value;
-		var result = Math.pow(a,3);
-		$(document).ready(function()
-		{
-			$("#cube").click(function()
-			{
-				$("#Ans").text(result);
-			});
-		});
-		console.log(result)
-	}
-
-	function doten(){
-		var a =document.form1.input1.value;
-		var i=10;
-		var result=a*i;
-		$(document).ready(function()
-		{
-			$("#ten").click(function()
-			{
-				$("#Ans").text(result);
-			});
-		});
-		console.log(result)
-	}
-	</script>
 </head>
 
 <body>
 	<div style="width:200px; margin:auto;">
 		<form name=form1 action="" id="cal">    	
 			<input type="text"   value=""            id="input1" placeholder = "enter the number " style="width:98%; height:35px;" />      
-			<input type="button" value="sqrt"        id="root"                   style="width:50px; height:50px; float:left;"/>
-			<input type="button" value="^2"          id="square" onClick='dosquare()'              style="width:50px; height:50px; float:left;"/>
-			<input type="button" value="^3"          id="cube"   onClick='docube()'                style="width:50px; height:50px; float:left;"/>
-			<input type="button" value="*10"         id="ten"    onClick='doten()'                 style="width:50px; height:50px; float:left;"/>
+			<input class="button1" type="button" value="sqrt"        id="root"                   style="width:50px; height:50px; float:left;"/>
+			<input class="button1" type="button" value="^2"          id="square"                 style="width:50px; height:50px; float:left;"/>
+			<input class="button1" type="button" value="^3"          id="cube"                   style="width:50px; height:50px; float:left;"/>
+			<input class="button1" type="button" value="*10"         id="ten"                    style="width:50px; height:50px; float:left;"/>
             </br>
 			Ans: <p id="Ans"> Ans </p>
 		</form>
-    
 	</div>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function()
+    {
+    console.log("in ready main");
+        $(".button1").click(function(){
+        
+            if( $(this).attr("id")=="root" ){
+             console.log("in ready root");
+                doroot();
+                }
+            if( $(this).attr("id")=="square" ){
+             console.log("in root");
+                dosquare();  
+                }
+            if( $(this).attr("id")=="cube" ){
+                docube();
+                }
+            if( $(this).attr("id")=="ten" ){
+                doten();                
+            }     
+         });
+      });
+    
+	function doroot()
+	{
+        console.log("in root");
+        var a = document.form1.input1.value;
+        var result = Math.sqrt(a);
+        $("#Ans").text(result);   
+	}
+
+	function dosquare(){
+		var a =document.form1.input1.value;
+		var result = Math.pow(a,2);
+		$("#Ans").text(result);
+	}
+
+	function docube(){
+		var a =document.form1.input1.value;
+		var result = Math.pow(a,3);
+		$("#Ans").text(result);
+	}
+
+	function doten(){
+		var a =document.form1.input1.value;
+		var i=10;
+		var result=a*i;
+        $("#Ans").text(result);
+	}
+	</script>
 </html>
