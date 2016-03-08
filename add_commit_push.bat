@@ -1,4 +1,4 @@
 git add *
-git commit -m "Updated Cloud Computing Assg and Changes made in sorting and math function programs "
+git commit -m "ESPL Assignment 9 and 10"
 git push -u origin master
 git status
