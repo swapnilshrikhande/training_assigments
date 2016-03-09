@@ -1,0 +1,7 @@
+public class InheritanceParent
+{
+    public void messageParent()
+    {
+        system.debug('You are in the Parent Class');
+    }
+}

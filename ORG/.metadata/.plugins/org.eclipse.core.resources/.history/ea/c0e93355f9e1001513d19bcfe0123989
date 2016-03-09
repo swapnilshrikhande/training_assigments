@@ -1,0 +1,9 @@
+public class InheritanceParent
+{
+    abstract public void messageInheritance();
+    
+    public void messageParent()
+    {
+        system.debug('You are in the Parent Class');
+    }
+}

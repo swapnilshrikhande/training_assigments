@@ -1,0 +1,22 @@
+public with sharing class OddEvenNumber 
+{
+//Input from User left
+   public static void OddEven(integer x)
+   {
+      integer n;
+      
+      if (n%2 == 0)
+      {
+         system.debug('Even number');
+      }  
+      else
+      {
+         system.debug('Odd number');
+      }   
+   }
+
+
+
+
+}
+
