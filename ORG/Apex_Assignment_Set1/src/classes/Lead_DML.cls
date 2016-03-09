@@ -2,6 +2,9 @@ global class Lead_DML
 { 
     public void updateStatus()
     {
+        // 
+        leadSet 
+        
         Set<Lead> s = new Set<Lead>([SELECT Name FROM Lead WHERE Status = 'Open']);
         for(Lead leadSet : s)
         {
